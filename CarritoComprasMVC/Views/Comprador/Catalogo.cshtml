@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Catalogo";
+}
+
+@model IEnumerable<CarritoComprasMVC.Models.Productos>
+
+<h2>Catálogo de Productos</h2>
+
+
+@foreach (var item in Model)
+{
+
+    @Html.Action("Comprar", "Comprar", new { id = item.Id })
+
+
+}
+
+

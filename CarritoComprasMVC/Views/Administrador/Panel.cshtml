@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Panel";
+}
+
+@model IEnumerable<CarritoComprasMVC.Models.Transacciones>
+
+<h2>Transacciones Realizadas</h2>
+
+<table>
+    <tr>
+        <th>Usuario</th>
+        <th>Producto</th>
+        <th>Cantidad</th>
+        <th>Fecha</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+            <tr>
+                <td>@item.Usuario.NombreCompleto</td>
+                <td>@item.Producto.Nombre</td>
+                <td>@item.CantidadComprada</td>
+                <td>@item.FechaCompra.ToString("dd/MM/yyyy HH:mm")</td>
+            </tr>
+    }
+</table>
+

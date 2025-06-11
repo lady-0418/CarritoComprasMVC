@@ -1,0 +1,20 @@
+﻿@{
+    Layout = null;
+}
+@model CarritoComprasMVC.Models.Productos
+
+<h2>Comprar:@Model.Nombre</h2>
+<p>@Model.Descripcion</p>
+<p>Disponibles:@Model.CantidadDisponible</p>
+
+@using (Html.BeginForm("Comprar", "Comprar"))
+{
+    <label>Cantidad</label>
+    <input type="number" name="cantidad" min="1" max="@Model.CantidadDisponible" />
+    <button type="submit">Confirmar compra</button>
+}
+
+@if (ViewBag.Mensaje != null)
+{
+    <p style="color:red">@ViewBag.Mensaje</p>
+}

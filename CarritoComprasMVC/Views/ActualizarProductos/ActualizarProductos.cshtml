@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "ActualizarProductos";
+}
+
+@model  CarritoComprasMVC.Models.Productos
+
+<h2>Actualizar Productos</h2>
+
+@using (Html.BeginForm("ActualizarProductos", "ActualizarProductos", FormMethod.Post))
+{
+    <div class="row justify-content-center">
+        <div class="col-md-6 mb-3">
+            @Html.LabelFor(m => m.Id)
+            @Html.TextBoxFor(m => m.Id)
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6 mb-3">
+            @Html.LabelFor(m => m.Nombre)
+            @Html.TextBoxFor(m => m.Nombre)
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6 mb-3">
+            @Html.LabelFor(m => m.CantidadDisponible)
+            @Html.TextBoxFor(m => m.CantidadDisponible)
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6 mb-3">
+            @Html.LabelFor(m => m.Descripcion)
+            @Html.TextAreaFor(m => m.Descripcion)
+        </div>
+    </div>
+
+
+    <div class="row justify-content-center">
+        <div class="col-md-6 mb-3">
+            <button type="submit" class="btn btn-success">Registrar</button>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+}
+

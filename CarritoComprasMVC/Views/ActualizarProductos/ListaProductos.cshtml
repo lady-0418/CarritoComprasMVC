@@ -1,0 +1,38 @@
+﻿@using CarritoComprasMVC.Models
+@{
+    ViewBag.Title = "ListaProductos";
+}
+@model List<Productos>
+
+<h2>Lista de Productos</h2>
+@{List<Productos> liProductos = ViewBag.listaProductos; }
+
+@Html.ActionLink("Crear", "Crear", null, new { @class = "btn btn-success btn-sm" })
+
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Cantidad disponible</th>
+        <th>Descripción</th>
+        <th>Acción</th>
+    </tr>
+    @foreach (Productos productos in liProductos)
+    {
+        <tr>
+            <td>@productos.Id</td>
+            <td>@productos.Nombre</td>
+            <td>@productos.CantidadDisponible</td>
+            <td>@productos.Descripcion</td>
+            <td>
+                @Html.ActionLink("Editar", "ActualizarProducto", new { id = productos.Id }, new { @class = "btn btn-warning btn-sm" })
+                @Html.ActionLink("Eliminar", "Eliminar", new { id = productos.Id }, new { @class = "btn btn-danger btn-sm", onclick = "return confirm('¿Estás segura de eliminar este producto?');" })
+
+            </td>
+        </tr>
+    }
+</table>
+
+
+

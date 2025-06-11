@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+<img src="~/Content/img/Banner.jpg" />
+<h1>Carrito de compras ADA</h1>
+<h2>Login</h2>
+
+@using (Html.BeginForm("Login", "Auth", FormMethod.Post))
+{
+    <div class="row justify-content-center">
+        <div class="col-md-6 mb-3">
+            <label>Usuario:</label>
+            <input type="text" name="usuario" required />
+        </div>
+
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6 mb-3">
+            <label>Contraseña:</label>
+            <input type="password" name="Contraseña" required />
+        </div>
+
+
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6 mb-3">
+            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6 mb-3">
+            <a href="@Url.Action("Registrar","Auth")" class="link-primary">Registrate</a>
+        </div>
+    </div>
+
+
+
+}
+
+@if (ViewBag.Mensaje != null)
+{
+    <p style="color:red">@ViewBag.Mensaje</p>
+}
+
+
+

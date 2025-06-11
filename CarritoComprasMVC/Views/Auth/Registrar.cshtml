@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "Registrar";
+}
+
+@model CarritoComprasMVC.Models.Usuario
+<h1>Carrito de compras ADA</h1>
+<h2>Registrate</h2>
+
+
+@using (Html.BeginForm("Registrar", "Auth", FormMethod.Post))
+{
+    <div class="row justify-content-center">
+        <div class="col-md-6 mb-3">
+            @Html.LabelFor(m => m.NombreCompleto)
+            @Html.TextBoxFor(m => m.NombreCompleto)
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6 mb-3">
+            @Html.LabelFor(m => m.Direccion)
+            @Html.TextBoxFor(m => m.Direccion)
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6 mb-3">
+            @Html.LabelFor(m => m.Telefono)
+            @Html.TextBoxFor(m => m.Telefono)
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6 mb-3">
+
+            @Html.LabelFor(m => m.Identificacion)
+            @Html.TextBoxFor(m => m.Identificacion)
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6 mb-3">
+
+            @Html.LabelFor(m => m.Login)
+            @Html.TextBoxFor(m => m.Login)
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6 mb-3">
+            @Html.LabelFor(m => m.Contraseña)
+            @Html.PasswordFor(m => m.Contraseña)
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6 mb-3">
+            @Html.LabelFor(m => m.Rol)
+            @Html.DropDownListFor(m => m.Rol, new SelectList(ViewBag.lista, "Value", "Text"))
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6 mb-3">
+            <button type="submit" class="btn btn-success">Registrar</button>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+}
